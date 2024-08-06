@@ -7,7 +7,11 @@ export default {
                 sans: ['Poppins', 'sans-serif'],
             },
             colors: {
-                'dark-blue': '#141D25',
+                'midnight-blue': '#141d25',
+                'dark-blue': '#10171D',
+            },
+            boxShadow: {
+                headerShadow: '5px 2px 20px 2px #000000',
             },
         },
     },

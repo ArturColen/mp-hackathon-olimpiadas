@@ -6,7 +6,6 @@
     min-width: 0;
 }
 
-/* global.css */
 body {
-    @apply bg-dark-blue text-white;
+    @apply bg-midnight-blue text-white;
 }
