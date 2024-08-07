@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
-import { Header } from "../../components/Common/Header";
-import { Footer } from "../../components/Common/Footer";
+import { Outlet } from 'react-router-dom';
+import { Header } from '../../components/Common/Header';
+import { Footer } from '../../components/Common/Footer';
 
 export function BasePage() {
     return (
@@ -9,5 +9,5 @@ export function BasePage() {
             <Outlet />
             <Footer />
         </main>
-    )
+    );
 }
