@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import olympicLogo from '../../assets/Home/About/olympic-logo.png';
 import eventsImage from '../../assets/Home/Menu/events.png';
 import rankingImage from '../../assets/Home/Menu/ranking.png';
 import sportsImage from '../../assets/Home/Menu/sports.png';
@@ -53,6 +54,24 @@ export function Home() {
                             />
                         </div>
                     </Link>
+                </div>
+            </section>
+            <section className="container mx-auto mb-20 py-5 flex flex-col items-center md:flex-row lg:px-10 xl:px-20">
+                <div className="md:w-2/3">
+                    <PageTitle text="Sobre o POP24" align="left" />
+                    <p className='mt-4 text-sm text-center md:text-justify md:text-base lg:mr-20'>
+                        Este projeto foi desenvolvido como parte do desafio da Codante, com o
+                        objetivo de proporcionar uma experiência interativa e informativa sobre os
+                        Jogos Olímpicos. Utilizando a API das Olimpíadas, criamos o POP (Portal
+                        Olimpíadas Paris), uma plataforma que inclui um ranking com os países que
+                        mais obtiveram medalhas na edição Paris 2024 até o momento, informações dos
+                        esportes envolvidos nas Olimpíadas, dados dos países participantes e mostra
+                        os próximos eventos. Nosso objetivo é conectar fãs e entusiastas dos
+                        esportes olímpicos, oferecendo uma visão abrangente e envolvent dos jogos.
+                    </p>
+                </div>
+                <div className="w-1/3 flex justify-end">
+                    <img src={olympicLogo} alt="Imagem da tocha olímpica" className="h-96 lg:h-120" />
                 </div>
             </section>
         </>

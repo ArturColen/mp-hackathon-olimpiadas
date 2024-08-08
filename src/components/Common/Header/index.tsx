@@ -26,7 +26,7 @@ export function Header() {
 
     return (
         <header
-            className={`shadow-headerShadow w-full sticky top-0 left-0 transition-colors duration-500 bg-midnight-blue`}
+            className={`shadow-headerShadow w-full sticky top-0 left-0 transition-colors duration-500 bg-midnight-blue z-10`}
         >
             <div className="h-20 px-7 flex items-center justify-between lg:px-32 xl:h-24">
                 <div className="w-10 h-10 xl:w-14 xl:h-14">
