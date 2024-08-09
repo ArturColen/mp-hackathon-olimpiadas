@@ -7,5 +7,5 @@
 }
 
 body {
-    @apply bg-midnight-blue text-white;
+    @apply bg-midnight-blue text-white font-primary;
 }

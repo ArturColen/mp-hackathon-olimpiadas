@@ -5,7 +5,7 @@ import rankingImage from '../../assets/Home/Menu/ranking.png';
 import sportsImage from '../../assets/Home/Menu/sports.png';
 import tabletImage from '../../assets/Home/Presentation/tablet-image.png';
 import textImage from '../../assets/Home/Presentation/text-image.png';
-import { PageTitle } from '../../components/Common/PageTitle';
+import { SectionTitle } from '../../components/Common/SectionTitle';
 
 export function Home() {
     return (
@@ -25,9 +25,9 @@ export function Home() {
                 </section>
             </div>
             <section className="container mx-auto py-20">
-                <PageTitle text="Selecione a opção desejada para começar:" align="center" />
+                <SectionTitle text="Selecione a opção desejada para começar:" align="center" />
                 <div className="mt-12 flex justify-center flex-wrap md:justify-evenly">
-                    <Link to="/" className="group">
+                    <Link to="/ranking" className="group">
                         <div className="overflow-hidden w-64 md:w-72 lg:w-80">
                             <img
                                 src={rankingImage}
@@ -58,7 +58,7 @@ export function Home() {
             </section>
             <section className="container mx-auto mb-20 py-5 flex flex-col items-center md:flex-row lg:px-10 xl:px-20">
                 <div className="md:w-2/3">
-                    <PageTitle text="Sobre o POP24" align="left" />
+                    <SectionTitle text="Sobre o POP24" align="left" />
                     <p className="mt-4 mb-10 text-sm text-center md:mb-0 md:text-justify md:text-base lg:mr-20">
                         Este projeto foi desenvolvido como parte do desafio da Codante, com o
                         objetivo de proporcionar uma experiência interativa e informativa sobre os

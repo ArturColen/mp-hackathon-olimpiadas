@@ -12,7 +12,7 @@ export function Header() {
         },
         {
             name: 'Ranking',
-            link: '/',
+            link: '/ranking',
         },
         {
             name: 'Esportes',
