@@ -1,9 +1,43 @@
 import { Search } from 'lucide-react';
-import brasilFlag from '../../assets/Ranking/brasil.png';
 import { PageTitle } from '../../components/Common/PageTitle';
 import { CountryItem } from '../../components/Ranking/CountryItem';
+import { useEffect, useState } from 'react';
+
+interface Country {
+    id: string;
+    flag_url: string;
+    rank: number;
+    name: string;
+    gold_medals: number;
+    silver_medals: number;
+    bronze_medals: number;
+    total_medals: number;
+}
 
 export function Ranking() {
+    const [apiData, setApiData] = useState<Country[]>([]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        const loadDataAPI = async () => {
+            try {
+                const response = await fetch('https://apis.codante.io/olympic-games/countries');
+
+                if (!response.ok) {
+                    throw new Error('Falha ao buscar dados');
+                }
+
+                const data = await response.json();
+                setApiData(data.data);
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        };
+
+        loadDataAPI();
+    }, []);
+
     return (
         <>
             <PageTitle text="Ranking por medalhas" />
@@ -17,15 +51,24 @@ export function Ranking() {
                 />
             </form>
             <section className="container mx-auto">
-                <CountryItem
-                    countryFlag={brasilFlag}
-                    countryPosition={1}
-                    countryName="Brasil"
-                    quantityGoldMedals={10}
-                    quantitySilverMedals={20}
-                    quantityBronzeMedals={30}
-                    totalMedalCount={60}
-                />
+                {apiData.length > 0 ? (
+                    <div>
+                        {apiData.map((country) => (
+                            <CountryItem
+                                key={country.id}
+                                countryFlag={country.flag_url}
+                                countryPosition={country.rank}
+                                countryName={country.name}
+                                quantityGoldMedals={country.gold_medals}
+                                quantitySilverMedals={country.silver_medals}
+                                quantityBronzeMedals={country.bronze_medals}
+                                totalMedalCount={country.total_medals}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <p className="text-2xl text-center font-bold">Buscando os dados...</p>
+                )}
                 <div className="h-10"></div>
             </section>
         </>

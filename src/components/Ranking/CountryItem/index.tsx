@@ -31,7 +31,7 @@ export function CountryItem({
                     alt={countryName}
                     className="w-14 object-cover mr-5 md:w-16 md:mr-8"
                 />
-                <h1 className="text-midnight-blue text-xl md:text-2xl lg:text-3xl">
+                <h1 className="text-midnight-blue text-sm sm:text-xl md:text-2xl lg:text-3xl">
                     <strong>{countryPosition}º</strong> {countryName}
                 </h1>
             </div>
