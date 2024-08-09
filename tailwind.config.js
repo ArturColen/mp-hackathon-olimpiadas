@@ -19,6 +19,9 @@ export default {
                 120: '30rem',
                 144: '36rem',
             },
+            minHeight: {
+                minScreenHeight: '90vh',
+            },
             backgroundImage: {
                 'olympics-bg': "url('/src/assets/Home/Presentation/main-bg.png')",
             },

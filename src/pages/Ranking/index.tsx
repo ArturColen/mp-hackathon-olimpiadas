@@ -16,6 +16,7 @@ interface Country {
 
 export function Ranking() {
     const [apiData, setApiData] = useState<Country[]>([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -38,22 +39,35 @@ export function Ranking() {
         loadDataAPI();
     }, []);
 
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
+
+    const filteredCountries = apiData.filter((country) =>
+        country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <>
             <PageTitle text="Ranking por medalhas" />
-            <form className="w-4/5 sm:w-2/3 lg:w-2/4 h-14 mx-auto mb-20 relative">
+            <form
+                className="w-4/5 sm:w-2/3 lg:w-2/4 h-14 mx-auto mb-20 relative"
+                onSubmit={handleSubmit}
+            >
                 <Search className="absolute top-1/2 transform -translate-y-1/2 left-4" />
                 <input
                     type="text"
                     placeholder="Pesquisar"
                     aria-label="Pesquisar"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full h-full pl-14 bg-dark-blue rounded-2xl text-lg shadow-inputShadow text-white placeholder:opacity-70 outline-none"
                 />
             </form>
-            <section className="container mx-auto">
-                {apiData.length > 0 ? (
+            <section className="container min-h-minScreenHeight mx-auto">
+                {filteredCountries.length > 0 ? (
                     <div>
-                        {apiData.map((country) => (
+                        {filteredCountries.map((country) => (
                             <CountryItem
                                 key={country.id}
                                 countryFlag={country.flag_url}
@@ -67,7 +81,7 @@ export function Ranking() {
                         ))}
                     </div>
                 ) : (
-                    <p className="text-2xl text-center font-bold">Buscando os dados...</p>
+                    <p className="text-2xl text-center font-bold">Nenhum país encontrado.</p>
                 )}
                 <div className="h-10"></div>
             </section>
