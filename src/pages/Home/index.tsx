@@ -57,9 +57,9 @@ export function Home() {
                 </div>
             </section>
             <section className="container mx-auto mb-20 py-5 flex flex-col items-center md:flex-row lg:px-10 xl:px-20">
-                <div className="md:w-2/3">
+                <div className="md:w-2/3 md:ml-5 lg:ml-0">
                     <SectionTitle text="Sobre o POP24" align="left" />
-                    <p className="mt-4 mb-10 text-sm text-center md:mb-0 md:text-justify md:text-base lg:mr-20">
+                    <p className="mt-4 mb-10 mx-5 text-sm text-justify md:mb-0 md:ml-0 md:text-base lg:mr-20">
                         Este projeto foi desenvolvido como parte do desafio da Codante, com o
                         objetivo de proporcionar uma experiência interativa e informativa sobre os
                         Jogos Olímpicos. Utilizando a API das Olimpíadas, criamos o POP (Portal
