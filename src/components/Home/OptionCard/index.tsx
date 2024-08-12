@@ -8,7 +8,7 @@ interface OptionCardProps {
 export function OptionCard({ option, image }: OptionCardProps) {
     return (
         <Link to={`/${option}`}>
-            <div className="overflow-hidden w-64 md:w-72 lg:w-80">
+            <div className="overflow-hidden w-40 sm:w-48 md:w-72 lg:w-80">
                 <img
                     src={image}
                     alt={`Imagem da opção de ${option}`}
