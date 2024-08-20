@@ -16,7 +16,7 @@ export function Header() {
         },
         {
             name: 'Esportes',
-            link: '/',
+            link: '/esportes',
         },
         {
             name: 'Eventos',

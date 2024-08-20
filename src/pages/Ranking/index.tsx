@@ -61,10 +61,10 @@ export function Ranking() {
                     aria-label="Pesquisar"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full h-full pl-14 bg-dark-blue rounded-2xl text-lg shadow-inputShadow text-white placeholder:opacity-70 outline-none"
+                    className="w-full h-full pl-14 bg-dark-blue rounded-2xl text-lg shadow-cardShadow    text-white placeholder:opacity-70 outline-none"
                 />
             </form>
-            <section className="container min-h-minScreenHeight mx-auto">
+            <section className="container min-h-minScreenHeight mx-auto mb-24">
                 {filteredCountries.length > 0 ? (
                     <div>
                         {filteredCountries.map((country) => (
@@ -83,7 +83,6 @@ export function Ranking() {
                 ) : (
                     <p className="text-2xl text-center font-bold">Nenhum país encontrado.</p>
                 )}
-                <div className="h-10"></div>
             </section>
         </>
     );

@@ -12,8 +12,8 @@ export default {
                 'light-gray': '#c5c5c5',
             },
             boxShadow: {
-                headerShadow: '5px 2px 20px 2px #000000',
-                inputShadow: '5px 5px 20px 0px #000000',
+                headerShadow: '5px 2px 20px 2px #000',
+                cardShadow: '5px 5px 20px 0px #000',
             },
             width: {
                 120: '30rem',
